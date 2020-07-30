@@ -61,9 +61,10 @@ def Get():
     # return json.dumps(result, cls=MyEncoder , ensure_ascii=False).encode('utf8')
 
 
-@app.route('/message/<m>')
+@app.route('/message/')
 # @auth.login_required
-def Message(m):
+def Message():
+    m = request.args.get('m')
     # multi = True if request.args.get('multi') else False
     multi = True
     if m is None or m == "":
